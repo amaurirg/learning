@@ -5,41 +5,70 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  FlatList
+  FlatList,
+  SafeAreaView
 } from 'react-native';
 
 
+// export default function App() {
+//   const [repositories, setRepositories] = useState([]);
+
+//   useEffect(() => {
+//     api.get('repositories').then(response => {
+//       setRepositories(response.data);
+//     })
+//   }, []);
+
+//   function all_repos() {
+//     console.log(repositories);
+//   }
+
+//   return (
+//     <FlatList
+//       data={repositories}
+//       keyExtractor={repository => repository.id}
+//       renderItem={({ item: repository }) => (
+//         <View style={styles.container}>
+//           <Text style={styles.project}>Repositório: {repository.title}</Text>
+//           <Text style={styles.tech}>Tecnologias:</Text>
+//         {repository.techs.map(tech => (
+//           <Text key={tech} style={styles.tech}>
+//             {tech}
+//           </Text>
+//         ))}
+//         </View>
+//       )}
+//     />
+//   );
+// }
+
+
 export default function App() {
-  const [repositories, setRepositories] = useState([]);
-
-  useEffect(() => {
-    api.get('repositories').then(response => {
-      setRepositories(response.data);
-    })
-  }, []);
-
-  function all_repos() {
-    console.log(repositories);
-  }
-
+  const lista = [
+    { id: "1", name: 'Amauri', linguagens: ['Python', 'C++', 'C#'] },
+    { id: "2", name: 'Giovani', linguagens: ['React', 'Node', 'JS'] },
+  ]
   return (
-    <FlatList
-      data={repositories}
-      keyExtractor={repository => repository.id}
-      renderItem={({ item: repository }) => (
-        <View style={styles.container}>
-          <Text style={styles.project}>Repositório: {repository.title}</Text>
-          <Text style={styles.tech}>Tecnologias:</Text>
-        {repository.techs.map(tech => (
-          <Text key={tech} style={styles.tech}>
-            {tech}
-          </Text>
-        ))}
-        </View>
-      )}
-    />
+    <>
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={lista}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => (
+          <View style={styles.container}>
+            <Text style={styles.buttonText}>{item.name}</Text>
+            {item.linguagens.map(linguagem => (
+              <Text key={Math.random().toString()} style={styles.buttonText}>{linguagem}</Text>
+            ))}
+          </View>
+        )}
+      />
+      </SafeAreaView>
+    </>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
