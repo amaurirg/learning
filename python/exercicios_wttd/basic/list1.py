@@ -23,10 +23,8 @@
 # Note: python does not have a ++ operator, but += works.
 def match_ends(words):
     # +++your code here+++
-    lista = [(i,c) for i,c in enumerate(words) if len(words[i]) >= 2 and (words[i][:1] == words[i][-1])]
-    return len(lista)
+    return len([word for word in words if (len(word) >= 2 and word[0] == word[-1])])
 
-#print(words[i][:1], words[i][-1])
 
 # B. front_x
 # Given a list of strings, return a list with the strings
@@ -37,26 +35,25 @@ def match_ends(words):
 # before combining them.
 def front_x(words):
     # +++your code here+++
-    x,l=[],[]
-    for c in (words):
-        if c.startswith('x'):
-            x.append(c)
-        else:
-            l.append(c)
-    return sorted(x)+sorted(l)
+    list1 = sorted([word for word in words if word.startswith('x')])
+    [words.remove(l) for l in list1]
+    return list1 + sorted(words)
 
 
-# C. sort_last
+    # C. sort_last
 # Given a list of non-empty tuples, return a list sorted in increasing
 # order by the last element in each tuple.
 # e.g. [(1, 7), (1, 3), (3, 4, 5), (2, 2)] yields
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
 def sort_last(tuples):
+    """
+    Também daria dessa forma:
+    from operator import itemgetter
+    return sorted(t1, key=itemgetter(-1))
+    """
     # +++your code here+++
-    tuples.insert(0,tuples.pop())
-    tuples.append(tuples.pop(1))
-    return tuples
+    return sorted(tuples, key=lambda t: t[-1])
 
 
 # Simple provided test() function used in main() to print
