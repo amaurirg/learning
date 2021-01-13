@@ -1,0 +1,20 @@
+No VSCode, instale a extensão Live Server para fazer o reload automático na página
+
+
+RESET CSS
+=========
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+box-sizing: border-box;  // para que o elemento permaneça com seu tamanho e o padding não aumente 
+                            o tamanho da width/height. Um elemento com width:300px e padding:20px permanecerá com width:300px e o padding fará com que ele tenha 260px internamente.
+
+// essas duas linhas abaixo são para que as fontes sejam mais suavizadas
+text-rendering: optimizeLegibility !important;
+-webkit-font-smoothing: antialiased !important;
+
+!important sobrescreve a configuração anterior
