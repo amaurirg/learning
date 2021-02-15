@@ -1,33 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import api from '../../services/api';
 import { MeusCSS } from './style.js';
 import ImgPKM from '../../images/ImgPKM.svg';
 
 
-
 export default function MeusPKMN() {
-  const [projects, setProjects] = useState(['Pikachu', 'Magneton', 'Charmander']);
+  const [meusPokemons, setMeusPokemons] = useState(() => {
+    const storagedMeusPokemons = localStorage.getItem('@PokeAPI:MeusPKMN');
+    if(storagedMeusPokemons) {
+      return JSON.parse(storagedMeusPokemons);
+    } else {
+      return [];
+    }
+  });
 
-  // useEffect(() => {
-  //   api.get('ability/?limit=100&offset=20').then(response => {
-  //     // console.log(response.data.results);
-  //     setProjects(response.data.results);
-  //   })
-  // }, []);
+  useEffect(() => {
+    localStorage.getItem('@PokeAPI:MeusPKMN');
+  }, [meusPokemons]);
 
-  function capturar() {
-    // setProjects([...projects, `Novo projeto ${Date.now()}`]);
-  }
+  // function capturar() {
+  //   setProjects([...projects, `Novo projeto ${Date.now()}`]);
+  // }
 
   return (
     <MeusCSS>
-      {projects.map(project => (
-        <div className="box">
+      {meusPokemons.map(pokemon => (
+        <div key={pokemon.name} className="box">
           <div className="dados-pkmn">
             <img src={ImgPKM} alt="" />
             <ul>
               <li><h3># NÚMERO POKEMON</h3></li>
-              <li><h4>{project}</h4></li>
+              <li><h4>{pokemon.name}</h4></li>
               <li><h5>TIPO (TIPOS)</h5></li>
             </ul>
           </div>

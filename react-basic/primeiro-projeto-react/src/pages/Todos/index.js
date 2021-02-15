@@ -4,32 +4,32 @@ import { TodosCSS } from './style.js';
 import ImgPKM from '../../images/ImgPKM.svg';
 
 
-
 export default function TodosPKM() {
-  const [pokemons, setPokemons] = useState([]);
-
+  const [todosPokemons, setTodosPokemons] = useState([]);
+  const [meusPokemons, setMeusPokemons] = useState([]);
   // ['Pikachu', 'Magneton', 'Charmander']
-
+  
   useEffect(() => {
     api.get('ability/?limit=5&offset=20').then(response => {
-      // console.log(response.data.results);
-      setPokemons(response.data.results);
+      setTodosPokemons(response.data.results);
     })
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('@PokeAPI:TodosPKMN', JSON.stringify(pokemons));
-  })
+    localStorage.setItem('@PokeAPI:TodosPKMN', JSON.stringify(todosPokemons));
+    localStorage.setItem('@PokeAPI:MeusPKMN', JSON.stringify(meusPokemons));
+  }, [todosPokemons, meusPokemons]);
 
-  function capturar() {
-    
-    // setPokemons([...pokemons, `Novo projeto ${Date.now()}`]);
+  function Capturar(indice) {
+    const capturado = todosPokemons.splice(indice, 1);
+    setTodosPokemons([...todosPokemons]);
+    setMeusPokemons([...meusPokemons, capturado[0]]);
   }
 
   return (
     <TodosCSS>
-      {pokemons.map(pokemon => (
-        <div key={pokemon} className="box">
+      {todosPokemons.map(pokemon => (
+        <div key={pokemon.name} className="box">
           <div className="dados-pkmn">
             <img src={ImgPKM} alt="" />
             <ul>
@@ -38,7 +38,7 @@ export default function TodosPKM() {
               <li><h5>TIPO (TIPOS)</h5></li>
             </ul>
           </div>
-          <button type="submit">Capturar</button>
+          <button type="submit" onClick={(e) => Capturar(todosPokemons.indexOf(pokemon))}>Capturar</button>
         </div>
       ))}
     </TodosCSS>
