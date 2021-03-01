@@ -1,6 +1,4 @@
 [submodule "docker/api-conversao"]
 	path = docker/api-conversao
 	url = https://github.com/KubeDev/api-conversao.git
-[submodule "docker/api-produto/api-produto"]
-	path = docker/api-produto/api-produto
-	url = https://github.com/KubeDev/api-produto.git
+
