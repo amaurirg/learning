@@ -2,3 +2,6 @@
 	path = docker/api-conversao
 	url = https://github.com/KubeDev/api-conversao.git
 
+[submodule "docker/api-produto-aula2"]
+	path = docker/api-produto-aula2
+	url = https://github.com/KubeDev/api-produto.git
