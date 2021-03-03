@@ -3,3 +3,7 @@ node_modules/
 __pycache__/
 *.py[cod]
 arquivos/
+*.python-version
+*db.sqlite3
+*.env
+
