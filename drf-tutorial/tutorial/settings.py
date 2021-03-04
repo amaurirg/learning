@@ -25,7 +25,7 @@ SECRET_KEY = 'lr+_7&x88sb()qe6^v%$6nn1z1tqle0owydm57)(f%!d$_9b!*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,22 +38,81 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
+    'tutorial.quickstart',
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
-}
+# REST_FRAMEWORK = {
+#
+# }
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+#     'PAGE_SIZE': 10,
+#     'DEFAULT_PARSER_CLASSES': [
+#         'rest_framework.parsers.JSONParser',
+#     ]
+# }
+
+# REST_FRAMEWORK = {
+#    'DEFAULT_AUTHENTICATION_CLASSES': (
+#        'rest_framework.authentication.TokenAuthentication',
+#        'rest_framework.authentication.SessionAuthentication',
+#    ),
+#    'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.IsAdminUser',
+#    ),
+# }
+
+ALLOWED_HOSTS = []
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# CORS_ORIGIN_ALLOW_ALL = True
+
+# CORS_ALLOW_ALL_ORIGINS = True
+
+# CORS_ALLOW_METHODS = [
+#     'DELETE',
+#     'GET',
+#     'OPTIONS',
+#     'PATCH',
+#     'POST',
+#     'PUT',
+# ]
+#
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",
+# ]
+#
+# CSRF_TRUSTED_ORIGINS = ["*"]
+#
+#
+# CSRF_TRUSTED_ORIGINS = [
+#     "http://localhost:3000",
+# ]
+#
+#
+# CORS_ORIGIN_WHITELIST = [
+#     'http://localhost:3000',
+# ]
+
+# APPEND_SLASH=False
+# CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOW_CREDENTIALS = False
+# CORS_ORIGIN_WHITELIST = (
+#     'localhost:8000',
+#     'localhost:3000',
+# )
 
 ROOT_URLCONF = 'tutorial.urls'
 
