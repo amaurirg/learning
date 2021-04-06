@@ -64,7 +64,7 @@ static3==0.7.0
 threadpoolctl==2.1.0
 tinycss2==1.1.0
 tqdm==4.56.0
-urllib3==1.26.3
+urllib3==1.26.4
 virtualenv==20.2.2
 WeasyPrint==52.2
 webencodings==0.5.1
