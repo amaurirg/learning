@@ -34,6 +34,7 @@ Outros temas
     github.com/mkdocs/mkdocs/wiki/MkDocs-Themes
 
 - Tema Material
+    https://squidfunk.github.io/mkdocs-material/
     pip install mkdocs-material
 
 - Alterando o tema:
