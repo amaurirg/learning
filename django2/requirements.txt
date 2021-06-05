@@ -14,7 +14,7 @@ deploy-to-heroku==0.0.1
 distlib==0.3.1
 dj-database-url==0.5.0
 dj-static==0.0.6
-Django==3.1.4
+Django==3.1.9
 django-appconf==1.0.4
 django-bootstrap4==2.3.1
 django-heroku==0.3.1
