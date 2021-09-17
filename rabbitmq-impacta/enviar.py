@@ -18,7 +18,7 @@ docker run -d - Inicializa o container em background e imprime o id
 rabbitmq:3-management - Nome da imagem docker a ser usada.
 
 Agora que você já tem um servidor RabbitMQ rodando, veja como é fácil publicar mensagens.
-Utilizaremos a biblioteca de nome PIKA para python.
+Utilizaremos a biblioteca de nome PIKA para python_dir.
 Instalar pika:
 pip install pika
 
