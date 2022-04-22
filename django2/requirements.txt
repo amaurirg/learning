@@ -45,7 +45,7 @@ psycopg2==2.8.6
 psycopg2-binary==2.8.6
 pycparser==2.20
 PyMySQL==1.0.2
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 Pyphen==0.10.0
 python-bidi==0.4.2
 python-dateutil==1.5
