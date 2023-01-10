@@ -33,7 +33,7 @@ heroku-git-fs==1.0.0
 herokutils==0.0.1
 html5lib==1.1
 idna==2.10
-joblib==1.0.0
+joblib==1.2.0
 mysql==0.0.2
 mysqlclient==2.0.2
 nltk==3.5
