@@ -1,7 +1,7 @@
 import json
 import xmltodict
 
-
+"""
 xml = '''
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://www.ebxml.org/namespaces/messageHeader" xmlns:sec="http://schemas.xmlsoap.org/ws/2002/12/secext" xmlns:ns="http://webservices.sabre.com/sabreXML/2011/10">
    <soapenv:Header>
@@ -156,10 +156,11 @@ xml = '''
 </soapenv:Envelope>
 
 '''
-
+"""
 
 # xml_parse = xmltodict.parse(xml)
-
+with open('/home/amauri/Downloads/PS195.xml', encoding='ISO-8859-1') as f:
+    xml = f.read()
 json_converted = json.dumps(xmltodict.parse(xml), indent=4)
 dict_converted = json.loads(json_converted)
 
