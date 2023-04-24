@@ -3,8 +3,8 @@
 
 import PyPDF2
 
-arquivo = '/home/amauri/Downloads/Fatura Claro (1).pdf'
-senha = '11748'
+arquivo = 'arquivo.pdf'
+senha = 'senha'
 
 pdfReader = PyPDF2.PdfFileReader(open(arquivo, 'rb'))
 pdfReader.decrypt(senha)

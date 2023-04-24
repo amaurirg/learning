@@ -16,10 +16,10 @@ import os
 from PyPDF2 import PdfFileReader, PdfFileWriter
 
 pdfWriter = PdfFileWriter()
-filename = 'uniclass.pdf'
+filename = 'arquivo.pdf'
 pdfFileObj = PdfFileReader(open(filename, 'rb'))
 # pdfFileObj.isEncrypted
-pdfFileObj.decrypt('11748')
+pdfFileObj.decrypt('senha')
 pdfReader = PdfFileReader(pdfFileObj)
 for pagenum in range(pdfReader.numPages):
     pageobj = pdfReader.getPage(pagenum)
