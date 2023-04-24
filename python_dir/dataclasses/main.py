@@ -37,8 +37,9 @@ default_factory             Se não passar nada, será um objeto com o valor pad
 Precisamos usar a tipagem (Typing)
 
 Podemos converter o objeto em dict com asdict ou tuple com astuple
-OU VICE-VERSA
+Exemplo no código
 
+OU VICE-VERSA
 Exemplo:
 data = {"nome": "Clarice", "sobrenome": "Kappes", "ddd": 13}
 clarice = Pessoa2(**data)
