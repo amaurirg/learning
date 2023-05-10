@@ -1,10 +1,22 @@
-from python_dir.ferrari import Ferrari
+def pessoa(nome, idade):
+    return nome, idade
 
 
-class Carro(Ferrari):
-    def __init__(self, nome):
-        self._nome = nome
+pessoa("Amauri", 48)
 
-    @property
-    def nome(self):
-        return self._nome
+
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def comer(self):
+        return "Pessoa comendo"
+
+
+
+
+# pessoa1 = Pessoa("Amauri", 48)
+# pessoa1.nome
+# pessoa1.idade
+# pessoa1.comer()
