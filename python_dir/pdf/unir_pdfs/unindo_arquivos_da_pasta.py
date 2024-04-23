@@ -5,8 +5,8 @@ import PyPDF2, os
 
 pdfFiles = []
 
-dirname = "/home/amauri/Downloads/Digitalização-20231030T114009Z-001/Digitalização/"
-name = "Raio-X"
+dirname = "/home/amauri/Downloads/"
+name = "Matrícula"
 filepath = "".join([dirname, name])
 os.chdir(filepath)
 

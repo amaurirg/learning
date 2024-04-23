@@ -1,3 +1,6 @@
+from functools import reduce
+import logging
+
 def contas(centros):
     match centros:
         case [area, centros]:   # Apenas 1 centro de custo
@@ -25,3 +28,32 @@ def contas2(centros):
 print("*" * 30)
 contas2("Financeiro")
 contas2(["Marketing", "RH"])
+
+
+# Apenas estudando a possibilidade
+def roles(role):
+    permissions = ["read", "write", "download", "premium suport", "admin privileges"]
+    nivel = 0
+    match role:
+        case "admin":
+         nivel = len(permissions)
+        case "vip":
+         nivel = len(permissions) -1
+        case "premium":
+         nivel = len(permissions) -2
+        case "plus":
+         nivel = len(permissions) -3
+        case "free":
+         nivel = len(permissions) -4
+    return permissions[:nivel]
+
+role = 'vip'
+roles(role)
+
+levels = {
+    1: 'read',
+    2: 'write',
+    3: 'download',
+    4: 'premium suport',
+    5: 'admin privileges',
+}

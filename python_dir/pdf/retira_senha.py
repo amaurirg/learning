@@ -3,10 +3,12 @@
 
 import PyPDF2
 
-arquivo = 'arquivo.pdf'
-senha = 'senha'
 
-pdfReader = PyPDF2.PdfFileReader(open(arquivo, 'rb'))
+pasta = '/home/amauri/Downloads'
+arquivo = 'Proposta de Contratacao Protecao Residencial.pdf'
+senha = '1174'
+
+pdfReader = PyPDF2.PdfFileReader(open('/'.join([pasta, arquivo]), 'rb'))
 pdfReader.decrypt(senha)
 pdfWriter = PyPDF2.PdfFileWriter()
 

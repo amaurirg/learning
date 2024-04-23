@@ -20,7 +20,7 @@ for filename in pdfFiles:
 	# pageObj.rotateClockwise(270)
 	pdfWriter.addPage(pageObj)
 
-pdfOutput = open('arquivo.pdf', 'wb')
+pdfOutput = open('Sinpeem - Precatórios.pdf', 'wb')
 pdfWriter.write(pdfOutput)
 pdfOutput.close()
 
